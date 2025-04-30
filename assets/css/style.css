@@ -28,10 +28,19 @@ a {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
 .side.hidden {
   transform: translateX(-100%);
+}
+
+.side.visible {
+  transform: translateX(0);
+}
+
+.side .logo {
+  margin-top: 60px;
 }
 
 .side .logo a {
@@ -57,17 +66,14 @@ a {
   transition: color 0.3s;
 }
 
-.nav li a:hover, .nav li a.active {
+.nav li a:hover,
+.nav li a.active {
   color: var(--accent-orange);
 }
 
 .nav li i {
   margin-right: 10px;
   color: var(--accent-orange);
-}
-
-.side .logo {
-  margin-top: 60px;
 }
 
 .main-content {
@@ -116,6 +122,11 @@ a {
   text-align: center;
   font-size: 18px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-grid div:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--accent-orange);
 }
 
 .skills-grid i {
@@ -181,51 +192,48 @@ a {
   color: #ccc;
 }
 
-
 .toggle-btn {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 2000;
+  z-index: 2001;
   font-size: 28px;
   color: var(--accent-orange);
   cursor: pointer;
-  display: none; 
+  background: transparent;
+  border: none;
+  display: none;
 }
 
+/* Show toggle only on mobile */
 @media (max-width: 768px) {
   .toggle-btn {
     display: block;
   }
 
   .side {
+    width: 220px;
+    height: 100vh;
     transform: translateX(-100%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-
-  .side.visible {
-    transform: translateX(0);
   }
 
   .main-content {
-    margin-left: 0 !important;
+    margin-left: 0;
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .side {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: space-between;
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
-}
-.skills-grid div:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px var(--accent-orange);
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
 }
