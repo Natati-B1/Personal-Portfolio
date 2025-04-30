@@ -1,0 +1,61 @@
+body {
+  font-family: 'Georgia', serif;
+  background: #fafafa;
+  padding: 40px;
+  color: #333;
+}
+
+.cv-container {  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.name h1 {
+  font-size: 32px;
+  color: #9c3d3d;
+  margin: 0;
+}
+
+.name h2 {
+  font-weight: normal;
+  font-size: 18px;
+  margin: 5px 0 0 0;
+}
+
+.contact p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+section {
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e6b0b0;
+  margin-bottom: 15px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
