@@ -246,3 +246,7 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.skills-grid div:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--accent-orange);
+}
