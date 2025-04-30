@@ -46,6 +46,7 @@ a {
 
 .nav li {
   margin: 20px 0;
+  list-style: none;
 }
 
 .nav li a {
@@ -65,11 +66,8 @@ a {
   color: var(--accent-orange);
 }
 
-.toggle-btn {
-  cursor: pointer;
-  color: var(--accent-orange);
-  font-size: 24px;
-  text-align: center;
+.side .logo {
+  margin-top: 60px;
 }
 
 .main-content {
@@ -104,14 +102,6 @@ a {
   text-align: center;
 }
 
-.project-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -125,6 +115,7 @@ a {
   border-radius: 8px;
   text-align: center;
   font-size: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skills-grid i {
@@ -155,11 +146,6 @@ a {
   color: var(--accent-orange);
 }
 
-.send-email {
-  margin-top: 30px;
-  text-align: center;
-}
-
 .btn {
   background: var(--accent-orange);
   padding: 10px 20px;
@@ -173,19 +159,11 @@ a {
   background: #e65c00;
 }
 
-.skills-grid div.hovered {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .home h1 {
   font-size: 48px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--text-white);
 }
-
 
 .home h1 span {
   font-family: 'Clicker Script', cursive;
@@ -196,7 +174,6 @@ a {
   font-size: 28px;
   color: var(--accent-orange);
   font-weight: 400;
-  margin-bottom: 10px;
 }
 
 .home p {
@@ -204,6 +181,68 @@ a {
   color: #ccc;
 }
 
-.skills-grid div {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Always style the toggle */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+  font-size: 28px;
+  color: var(--accent-orange);
+  cursor: pointer;
+  display: none; /* Hide by default */
+}
+
+/* Show toggle on mobile devices (phones) */
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+  }
+
+  .side {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .side.visible {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .side {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .main-content {
+    margin-top: 120px;
+    padding: 15px;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }

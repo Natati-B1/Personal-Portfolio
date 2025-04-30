@@ -47,3 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+const toggleBtn = document.getElementById("toggleBtn");
+const sidebar = document.querySelector(".side");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("visible");
+});
